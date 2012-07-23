@@ -1,6 +1,9 @@
 package pkg;
 
+import it.fotino.java.util.FileOperations;
+
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -220,16 +223,22 @@ public class Prova {
 
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
 
+		StringBuilder stringBuilder=new StringBuilder();
+		
 		for (int i = 5; i < 317; i++) {
 
 			String page=getHTML("http://qualita.assagricalabria.it/prg_main.php?parametro=vedi_articoli&id="+i+"&dir=0&centro=prg_prodotti&guest=ok");
 
+			stringBuilder.append("\n\nID = "+i);
 			Map<String, String> values=pageToValues(page);
-
-			System.out.println("TERRITORIO = "+values.get("territorio"));
-
+			
+			for (String key : values.keySet()) {
+				stringBuilder.append(key+" = "+values.get(key)+"\n");
+			}
 
 		}
+		
+		FileOperations.writeStringToFile(stringBuilder.toString(), new File("C:/calabria.txt"));
 		
 
 	}
