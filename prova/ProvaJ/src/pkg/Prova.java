@@ -229,7 +229,7 @@ public class Prova {
 
 			String page=getHTML("http://qualita.assagricalabria.it/prg_main.php?parametro=vedi_articoli&id="+i+"&dir=0&centro=prg_prodotti&guest=ok");
 
-			stringBuilder.append("\n\nID = "+i);
+			stringBuilder.append("\nID = "+i+"\n");
 			Map<String, String> values=pageToValues(page);
 			
 			for (String key : values.keySet()) {
