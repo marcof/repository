@@ -9,8 +9,25 @@
   	<dependency>
   		<groupId>junit</groupId>
   		<artifactId>junit</artifactId>
-  		<version>4.8.1</version>
   		<scope>test</scope>
   	</dependency>
   </dependencies>
+  <dependencyManagement>
+  	<dependencies>
+  		<dependency>
+  			<groupId>junit</groupId>
+  			<artifactId>junit</artifactId>
+  			<version>4.8.1</version>
+  		</dependency>
+  	</dependencies>
+  </dependencyManagement>
+  <organization>
+  	<name>Marco Fotino</name>
+  	<url>http://www.fotino.it</url>
+  </organization>
+  <scm>
+  	<url>scm:git:https://github.com/marcof/repository.git</url>
+  	<connection>scm:git:https://github.com/marcof/repository.git</connection>
+  	<developerConnection>scm:git:https://github.com/marcof/repository.git</developerConnection>
+  </scm>
 </project>
